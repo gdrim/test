@@ -10,6 +10,8 @@ public class Tank {
 
     public Tank() {
         this(0, 0);
+
+        //test
     }
 
     public Tank(int x, int y) {
