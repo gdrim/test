@@ -50,7 +50,8 @@ public class Tank {
             }
             fuel = 0;
         }
-
+        int test = 1;
+        System.out.println(test);
 
         if (dir == 0) x += step;
         else if (dir == 1) y += step;
