@@ -1,3 +1,5 @@
+package old;
+
 import java.text.FieldPosition;
 import java.text.Format;
 import java.text.ParsePosition;
@@ -7,6 +9,9 @@ import static java.lang.Math.abs;
 public class Tank {
     int x, y, fuel;
     int dir;
+
+    Object o = new Tank();
+
 
     public Tank() {
         this(0, 0);
@@ -60,7 +65,7 @@ public class Tank {
     }
 
     public void printPosition() {
-        System.out.println("The Tank is at " + x + ", " + y + " now.");
+        System.out.println("The old.Tank is at " + x + ", " + y + " now.");
     }
 
     public void turnLeft() {
