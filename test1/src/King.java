@@ -1,8 +1,6 @@
-import java.security.PublicKey;
 
-public class Horse extends ChessPiece {
-
-    public Horse(String color) {
+public class King extends ChessPiece {
+    public King(String color) {
         super(color);
     }
 
@@ -24,19 +22,22 @@ public class Horse extends ChessPiece {
         }
     }
 
-
     private boolean checkTrajectory(int line, int column, int toLine, int toColumn) {
-        if (Math.abs(toLine - line) == 2 && Math.abs(toColumn - column) == 1) {
-            return true;
-        } else if (Math.abs(toLine - line) == 1 && Math.abs(toColumn - column) == 2) {
+        System.out.println( line+toLine+column+toColumn );
+        if (Math.abs(toLine - line) <= 1 && Math.abs(toColumn - column) <= 1) {
             return true;
         } else {
             return false;
         }
     }
 
+    public boolean isUnderAttack(ChessBoard board, int line, int column){
+
+        return false;
+    }
+
     @Override
     public String getSymbol() {
-        return "H";
+        return "K";
     }
 }

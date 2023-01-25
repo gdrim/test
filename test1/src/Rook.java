@@ -1,8 +1,5 @@
-import java.security.PublicKey;
-
-public class Horse extends ChessPiece {
-
-    public Horse(String color) {
+public class Rook extends ChessPiece {
+    public Rook(String color) {
         super(color);
     }
 
@@ -24,19 +21,17 @@ public class Horse extends ChessPiece {
         }
     }
 
-
     private boolean checkTrajectory(int line, int column, int toLine, int toColumn) {
-        if (Math.abs(toLine - line) == 2 && Math.abs(toColumn - column) == 1) {
-            return true;
-        } else if (Math.abs(toLine - line) == 1 && Math.abs(toColumn - column) == 2) {
+        if (toLine == line || toColumn == column ) {
             return true;
         } else {
             return false;
         }
     }
 
+
     @Override
     public String getSymbol() {
-        return "H";
+        return "R";
     }
 }

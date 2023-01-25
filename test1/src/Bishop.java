@@ -1,8 +1,6 @@
-import java.security.PublicKey;
+public class Bishop extends ChessPiece {
 
-public class Horse extends ChessPiece {
-
-    public Horse(String color) {
+    public Bishop(String color) {
         super(color);
     }
 
@@ -24,11 +22,8 @@ public class Horse extends ChessPiece {
         }
     }
 
-
     private boolean checkTrajectory(int line, int column, int toLine, int toColumn) {
-        if (Math.abs(toLine - line) == 2 && Math.abs(toColumn - column) == 1) {
-            return true;
-        } else if (Math.abs(toLine - line) == 1 && Math.abs(toColumn - column) == 2) {
+        if (Math.abs(toLine - line) == Math.abs(toColumn - column) ) {
             return true;
         } else {
             return false;
@@ -37,6 +32,6 @@ public class Horse extends ChessPiece {
 
     @Override
     public String getSymbol() {
-        return "H";
+        return "B";
     }
 }
