@@ -9,6 +9,9 @@ public class ChessBoard {
     public String nowPlayerColor() {
         return this.nowPlayer;
     }
+    public ChessPiece getChessPiece(int line, int column){
+        return board[line][column];
+    }
 
     public boolean moveToPosition(int startLine, int startColumn, int endLine, int endColumn) {
         if (checkPos(startLine) && checkPos(startColumn)) {

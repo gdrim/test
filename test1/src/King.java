@@ -23,7 +23,7 @@ public class King extends ChessPiece {
     }
 
     private boolean checkTrajectory(int line, int column, int toLine, int toColumn) {
-        System.out.println( line+toLine+column+toColumn );
+        System.out.println(line + toLine + column + toColumn);
         if (Math.abs(toLine - line) <= 1 && Math.abs(toColumn - column) <= 1) {
             return true;
         } else {
@@ -31,8 +31,14 @@ public class King extends ChessPiece {
         }
     }
 
-    public boolean isUnderAttack(ChessBoard board, int line, int column){
-
+    public boolean isUnderAttack(ChessBoard board, int line, int column) {
+        for (int i = 0; i <= 7; i++) {
+            for (int j = 0; j <= 7; j++) {
+                if (board.getChessPiece(i, j) != null && board.getChessPiece(i, j).canMoveToPosition(board, i, j, line, column)) {
+                    return true;
+                }
+            }
+        }
         return false;
     }
 
